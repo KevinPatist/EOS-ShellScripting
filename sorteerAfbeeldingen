@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd ../../
+cd ~/
 pad=$1
 cd $pad
 if [ -d Afbeeldingen ]; then
