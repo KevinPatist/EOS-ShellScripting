@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+cd ../../
+pad=$1
+cd $pad
+if [ -d Afbeeldingen ]; then
+	echo "Map: 'Afbeeldingen' bestaat al."
+else
+	mkdir Afbeeldingen
+	echo "Map 'Afbeeldingen' aangemaakt."
+fi
+
+find -maxdepth 1 -name "*.jpg" -exec mv {} Afbeeldingen/{} ';'
+
+find -maxdepth 1 -name "*.png" -exec mv {} Afbeeldingen/{} ';' 
+
