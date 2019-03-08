@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+PAD=$1
+cd ~/
+cd $PAD
+
+find -name "*.jpg" -exec convert {} -format jpg {}.png ';'
+find -name "*.png" -exec convert {} -resize 128x128 {} ';'

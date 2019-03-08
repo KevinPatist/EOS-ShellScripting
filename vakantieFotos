@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+cd ~/
+PAD=$1
+cd $PAD
+
+if [ -d Vakantie ]; then
+	echo "Map 'Vakantie' bestaat al."
+else
+	mkdir Vakantie
+fi
+
+find -maxdepth 1 -name "*.jpg" | grep vakantie | xargs -I{} mv {} Vakantie
