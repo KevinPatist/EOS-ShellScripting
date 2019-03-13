@@ -3,7 +3,7 @@ file=$1
 read -p "Geef uw username: " username
 
 if grep -Fxq "Username: $username" $1; then
-	echo "U heeft een goede username ingevoerd"
+	echo "U heeft een goede username ingevoerd."
 else
 	echo "U heeft een verkeerde username ingevoerd"
 	exit

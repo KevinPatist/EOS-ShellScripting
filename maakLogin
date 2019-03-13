@@ -8,7 +8,7 @@ if [ "$username" = "" ]; then
 	username=$(whoami)
 fi
 
-echo "Hallo $username!"
+echo "Hallo $username."
 
 read -sp "Geef een wachtwoord: " wachtwoord
 

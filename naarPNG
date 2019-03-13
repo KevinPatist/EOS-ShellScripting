@@ -4,4 +4,5 @@ cd ~/
 cd $PAD
 
 find -name "*.jpg" -exec convert {} -format jpg {}.png ';'
+
 find -name "*.png" -exec convert {} -resize 128x128 {} ';'

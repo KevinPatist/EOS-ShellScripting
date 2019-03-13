@@ -4,7 +4,7 @@ PAD=$1
 cd $PAD
 
 if [ -d Vakantie ]; then
-	echo "Map 'Vakantie' bestaat al."
+	echo "Map 'Vakantie' bestaat al"
 else
 	mkdir Vakantie
 fi

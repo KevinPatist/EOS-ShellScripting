@@ -23,7 +23,7 @@ case $# in
 	command=($2 + $3 + $4)
     ;;
     *)
-	echo "Geef tussen de 1 en 3 argumenten"
+	echo "Geef tussen de 1 en 3 argumenten."
     ;;
 esac
 

@@ -21,7 +21,7 @@ for file in $files; do
 	((type4Count+=1))
 	;;
 	*)
-	echo "Geef niet meer dan 4 bestandstypen mee."
+	echo "Geef niet meer dan 4 bestandstypen mee"
 	;;
     esac
 done

@@ -4,10 +4,10 @@ pad=$1
 Array=("*.jpg" "*.png")
 cd $pad
 if [ -d Afbeeldingen ]; then
-	echo "Map: 'Afbeeldingen' bestaat al."
+	echo "Map: 'Afbeeldingen' bestaat al"
 else
 	mkdir Afbeeldingen
-	echo "Map 'Afbeeldingen' aangemaakt."
+	echo "Map 'Afbeeldingen' aangemaakt"
 fi
 
 for item in ${Array[@]}; do
