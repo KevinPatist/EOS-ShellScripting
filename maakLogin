@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+file=$1
+echo "Wat is jou naam?"
+
+read username
+
+if [ "$username" = "" ]; then
+	username=$(whoami)
+fi
+
+echo "Hallo $username!"
+
+read -sp "Geef een wachtwoord: " wachtwoord
+
+until [[ $wachtwoord =~ [a-z] && $wachtwoord =~ [A-Z] && ${#wachtwoord} -ge 8 ]]; do
+	echo ""
+	echo "Het wachtwoord moet minimaal een hoofdletter, kleine letter en cijfer bevatten."
+	read -sp "Geef een wachtwoord: " wachtwoord
+done
+
+echo ""
+
+echo "Het is gelukt, jou inloggegevens zijn opgeslagen."
+
+wwHash=$(echo -n $wachtwoord | md5sum)
+
+if [ -f $1 ]; then
+	rm $1
+fi
+
+touch $1
+echo $username >> $1
+echo $wwHash >> $1
