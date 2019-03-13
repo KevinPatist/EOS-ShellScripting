@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+file=$1
+read -p "Geef uw username: " username
+
+if grep -Fxq "Username: $username" $1; then
+	echo "U heeft een goede username ingevoerd"
+else
+	echo "U heeft een verkeerde username ingevoerd"
+	exit
+fi
+
+read -sp "Geef uw wachtwoord: " wachtwoord
+
+preWW=$(echo -n $wachtwoord | md5sum)
+wwHash=$(echo $preWW)
+
+if grep -Fxq "Wachtwoord: $wwHash" $1; then
+	echo "Het is gelukt, nu wegwezen jij!"
+	exit
+else
+	echo "Oprotten dief, niemand mag jou!"
+	exit
+fi

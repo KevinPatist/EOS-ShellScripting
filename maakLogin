@@ -23,6 +23,7 @@ echo ""
 echo "Het is gelukt, jou inloggegevens zijn opgeslagen."
 
 wwHash=$(echo -n $wachtwoord | md5sum)
+goeieHash=$(echo $wwHash)
 
 if [ -f $1 ]; then
 	rm $1
@@ -30,4 +31,4 @@ fi
 
 touch $1
 echo "Username: $username" >> $1
-echo "Wachtwoord: $wwHash" >> $1
+echo "Wachtwoord: $goeieHash" >> $1
