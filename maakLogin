@@ -29,5 +29,5 @@ if [ -f $1 ]; then
 fi
 
 touch $1
-echo $username >> $1
-echo $wwHash >> $1
+echo "Username: $username" >> $1
+echo "Wachtwoord: $wwHash" >> $1
