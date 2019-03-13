@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+PAD=$1
+cd ~/
+cd $PAD
+
+files=$(find -maxdepth 1)
+
+if [ -f log.txt ]; then
+	rm log.txt
+	touch log.txt
+else
+	touch log.txt
+fi
+
+case $# in
+    2)
+	command=$2
+    ;;
+    3)
+	command=($2 + $3)
+    ;;
+    4)
+	command=($2 + $3 + $4)
+    ;;
+    *)
+	echo "Geef tussen de 1 en 3 argumenten"
+    ;;
+esac
+
+for file in $files; do
+	if [ "$command $file" ]; then
+		echo "Het is gelukt."
+	else
+		echo "Niet gelukt" >> log.txt
+	fi
+done
